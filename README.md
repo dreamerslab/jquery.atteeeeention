@@ -62,7 +62,7 @@ If you have a image gallery with different width and height for each image, your
     });
 
 #### hideLastRow
-- description: space between images( margin-right and margin-bottom )
+- description: sometimes the last row might not have enough images, if you want your gallery to look prettier you can set this option to true to hide the last row
 - data type: bool
 - default value: false
 - possible value: true, false

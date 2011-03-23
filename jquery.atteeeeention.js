@@ -19,8 +19,10 @@ $.fn.atteeeeention = function( options ){
     $this = $( this ),
     $imgs = $this.find( 'img' ),
     
+    // cache obj prop to local var
     margin = configs.margin,
-    // init value
+    
+    // init values
     imgCount = $imgs.length,
     loadedImgCount = 0,
     containerWidth = $this.innerWidth(),
@@ -28,13 +30,10 @@ $.fn.atteeeeention = function( options ){
     rowWidths = [],
     rowWidth = 0,
     rowHeight = 1000,
-    rowInfo = [],
     rowItems = 0,
-    rowCounter = 0,
     appliedImg = 0,
     
     beautify = function(){
-      // build
       var diff = containerWidth - ( rowWidth - imgWrapWidth ) + margin,
       extra = Math.floor( diff / rowItems ),
       // the gap that Math.floor produced
@@ -47,11 +46,14 @@ $.fn.atteeeeention = function( options ){
         $wrap = $img.parent();
         // record width to parent scope to find the last img width
         realWidth = width + extra;
+        
+        // apply min height to all images in a row
         $wrap.height( rowHeight );
         
         // clear margin-right for every last row element
         if( rowItems === ( i + 1 )){
           $wrap.css( 'margin-right' , 0 );
+          
           // fill the gap for last img
           $img.width( realWidth + gap );
         }else{
@@ -63,12 +65,15 @@ $.fn.atteeeeention = function( options ){
     
     lastRow = function(){
       var i = 0, j = rowItems;
+      
+      // hide the last row images if the option set to true
       if( configs.hideLastRow === true ){
         for( ; i < j; i++ ){
           $( $imgs[ appliedImg ]).parent().hide();
           appliedImg++;
         }
       }else{
+        // apply hieight to images in the last row
         for( ; i < j; i++ ){
           $( $imgs[ appliedImg ]).parent().height( rowHeight );
           appliedImg++;
@@ -78,6 +83,7 @@ $.fn.atteeeeention = function( options ){
     
     $this.addClass( 'clearfix' );
     
+    // apply basic styles
     $imgs.css({
       border : 0,
       margin : 0,
@@ -111,23 +117,28 @@ $.fn.atteeeeention = function( options ){
         if( loadedImgCount === imgCount ){
           
           $imgs.each( function( i ){
+            // cache jquery obj
             var $img = $( this ),
+            
             // current thumbnail width
             currentWidth = $img.width(),
+            
             // current thumbnail height
             currentHeight = $img.height();
+            
             // add 12 for wrapper margin-right
             imgWrapWidth = currentWidth + margin;
 
             rowWidth = rowWidth + imgWrapWidth;
+            
             // get the smallest height
             if( currentHeight < rowHeight ) rowHeight = currentHeight;
+            
             // this statement determine how many imgs in a row
             if( rowWidth > containerWidth ){
 
               beautify();
               
-              rowCounter++;
               // reset
               rowWidth = imgWrapWidth;
               rowHeight = currentHeight;
@@ -144,9 +155,6 @@ $.fn.atteeeeention = function( options ){
           }); // end $imgs.each
         }; // end if
       }).attr( 'src', src );
-      
     }); // end $imgs.each
-    
-    
   });
 };
