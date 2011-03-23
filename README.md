@@ -93,9 +93,9 @@ If you have a image gallery with different width and height for each image, your
       ....
     </div>
 
-- 'div' cab be replaced with 'ul', 'ol' or any other block element.
-- 'class' cab be used instead of 'id' 
-- 'a' cab be replaced with 'div', 'span', or any other tag
+- 'div' can be replaced with 'ul', 'ol' or any other block element.
+- 'class' can be used instead of 'id' 
+- 'a' can be replaced with 'div', 'span', or any other tag
 
 ## Demo
 Please see demo.html 

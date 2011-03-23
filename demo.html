@@ -45,6 +45,12 @@
           <p>
             Try search images from google and see the result :)
           </p>
+          <h3>The code</h3>
+          <pre>
+            $( '#play-ground' ).atteeeeention({
+              hideLastRow : true
+            });
+          </pre>
           <div id="spacer">
             <input type="text" id="keyword" />
             <input type="button" id="search" value="Search"/>
@@ -116,7 +122,9 @@
           var googleSearch = function(){
             execute( $( '#keyword' ).val(), function(){
               // THE ACTUAL CODE
-              $( '#play-ground' ).atteeeeention();
+              $( '#play-ground' ).atteeeeention({
+                hideLastRow : true
+              });
             });
           };
           
