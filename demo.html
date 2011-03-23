@@ -1,0 +1,148 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>jQuery Atteeeeention Plugin Demo</title>
+    <style type="text/css">
+      #wrap{
+        margin: 0 20px 50px;
+      }
+      #controller{
+        width: 600px;
+        margin: 0 auto;
+      }
+      #spacer{
+        height: 50px;
+      }
+      #info{
+        text-align: center;
+        margin: 50px 0 0;
+      }
+      .clearfix:after{
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+      .clearfix{
+        display: inline-block;
+      }
+      * html .clearfix{
+        height: 1%;
+      }
+      .clearfix{
+        display: block;
+      }
+    </style>
+    </head>
+    <body>
+      <div id="wrap">
+        <div id="controller">
+          <h1>
+            jQuery Atteeeeention Plugin Demo
+          </h1>
+          <p>
+            Try search images from google and see the result :)
+          </p>
+          <div id="spacer">
+            <input type="text" id="keyword" />
+            <input type="button" id="search" value="Search"/>
+          </div>
+        </div>
+        <div id="play-ground"></div>
+        <h3 id="info">
+          Demo provides by <a href="http://dreamerslab.com/">DreamersLab</a>
+        </h3>
+      </div>
+      <!-- local -->
+      <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAMhcsKdGbN7wyzIW9iO-Q9BQTZCizKq1GC5Y2wSW4KaSaAD3qQxRwuqSVrHgEuCmXbDY7R8m93bjErQ"></script>
+      <!-- www -->
+      <!-- <script type="text/javascript" src="https://www.google.com/jsapi?key=ABQIAAAAMhcsKdGbN7wyzIW9iO-Q9BR1p-jxlQxlzuvWpe2GoztAsaLzWxRv01EB9OWeF68zHRPAITvn_w8ofQ"></script> -->
+      
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+      <script type="text/javascript" src="jquery.atteeeeention.min.js"></script>
+      <script type="text/javascript" charset="utf-8">
+      // load google search lib
+      google.load( 'search', '1' );
+      // wrap args and func in a closure
+      ( function( g, $ ){
+        var pageCounter,
+        // tmp container for imgs to be append to DOM
+        imgs,
+        // reset all args
+        reset = function(){
+          pageCounter = 0;
+          imgs = '';
+          $( '#play-ground' ).empty();
+        },
+        // set search options
+        search = function( keyowrd, controller, afterSearch, callback ){
+          // google only gives 8 results max per request
+          controller.setResultSetSize( 8 );
+          controller.setSearchCompleteCallback( this, afterSearch, [ controller, callback ] );
+          controller.execute( keyowrd );
+        },
+        // build DOM
+        // this func will be call from within itself by google api .gotoPage()
+        build = function( controller, callback ){
+          // loop through each search result
+          // calculate and record results
+          $.each( controller.results, function( key, val ){
+            imgs = imgs + 
+            '<a title="' + val.titleNoFormatting + '" href="' + val.unescapedUrl + '">' +
+              '<img src="' + val.tbUrl +'"/>' +
+            '</a>';
+          });
+
+          pageCounter++;
+          // ask for the next page data
+          controller.gotoPage( pageCounter );
+          // only append to DOM with the last query
+          if( pageCounter === 8 ){
+            $( '#play-ground' ).append( imgs );
+            if( callback ) callback.call( this );
+          }
+        },
+        
+        execute = function( keyword, callback ){
+          var searcher = new g.search.ImageSearch();
+          reset();
+          search( keyword, searcher, build, callback );
+        };
+        
+        $( function(){
+          
+          var googleSearch = function(){
+            execute( $( '#keyword' ).val(), function(){
+              // THE ACTUAL CODE
+              $( '#play-ground' ).atteeeeention();
+            });
+          };
+          
+          $( '#search' ).bind( 'click', googleSearch );
+          $( '#keyword' ).bind( 'keypress', function( e ){     
+            if( e.keyCode === 13 ){      
+              googleSearch();
+            }
+          });
+          
+        });
+
+      })( google, jQuery );
+      
+      </script>
+      <script type="text/javascript" charset="utf-8">
+        // google analytics
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-20960410-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+      </script>
+    </body>
+</html>
