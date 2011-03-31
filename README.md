@@ -53,7 +53,7 @@ If you have a image gallery with different width and height for each image, your
 - data type: integer
 - default value: 12
 - possible value: any integer
-- sample code
+- example code
 
 <!-- -->
 
@@ -66,7 +66,7 @@ If you have a image gallery with different width and height for each image, your
 - data type: bool
 - default value: false
 - possible value: true, false
-- sample code
+- example code
 
 <!-- -->
 
@@ -75,7 +75,7 @@ If you have a image gallery with different width and height for each image, your
     });
 
 ## HTML markup
-> Sample code
+> example code
 
 <!-- -->
     
