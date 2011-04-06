@@ -25,7 +25,7 @@ If you have a image gallery with different width and height for each image, your
       <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
       <script type="text/javascript" src="path-to-file/jquery.atteeeeention.js"></script>
 
-  - add these css styles to your stylesheet
+  - Add these css styles to your stylesheet
 
 <!-- -->
 
@@ -49,11 +49,11 @@ If you have a image gallery with different width and height for each image, your
 ## Options
 
 #### margin
-- description: space between images( margin-right and margin-bottom )
-- data type: integer
-- default value: 12
-- possible value: any integer
-- example code
+  - description: space between images( margin-right and margin-bottom )
+  - data type: integer
+  - default value: 12
+  - possible value: any integer
+  - example code
 
 <!-- -->
 
@@ -62,11 +62,11 @@ If you have a image gallery with different width and height for each image, your
     });
 
 #### hideLastRow
-- description: sometimes the last row might not have enough images, if you want your gallery to look prettier you can set this option to true to hide the last row
-- data type: bool
-- default value: false
-- possible value: true, false
-- example code
+  - description: sometimes the last row might not have enough images, if you want your gallery to look prettier you can set this option to true to hide the last row
+  - data type: bool
+  - default value: false
+  - possible value: true, false
+  - example code
 
 <!-- -->
 
@@ -93,12 +93,18 @@ If you have a image gallery with different width and height for each image, your
       ....
     </div>
 
-- 'div' can be replaced with 'ul', 'ol' or any other block element.
-- 'class' can be used instead of 'id' 
-- 'a' can be replaced with 'div', 'span', or any other tag
+  - 'div' can be replaced with 'ul', 'ol' or any other block element.
+  - 'class' can be used instead of 'id' 
+  - 'a' can be replaced with 'div', 'span', or any other tag
 
 ## Demo
-Please see demo.html 
+ - Please see demo.html
+ - Online version please take a look at [this](http://dreamerslab.com/demos/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin)
+
+## Documentation
+  - There is a syntax highlight version, please see [this post](http://dreamerslab.com/blog/en/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin/)
+  - For chinese version please go [here](http://dreamerslab.com/blog/tw/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin/)
+
 
 ## License
 
