@@ -1,7 +1,16 @@
 # jQuery Atteeeeention Plugin CHANGELOG
 
+## 1.0.2
+
+* Syntax tuning
+
+
+
 ## 1.0.1
+
 * Fix `$` namespace conflict
+
+
 
 ## 1.0.0
 
