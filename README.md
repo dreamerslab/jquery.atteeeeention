@@ -2,12 +2,29 @@
 
 A 'Google Image Search style' image alignment jQuery plugin.
 
+
+
 ## Description
 If you have a image gallery with different width and height for each image, your page may look messy. Use this plugin to align your gallery with a 'Google Image Search' style result.
 
 
+
+## Demo
+ - Please see demo.html
+ - Live demo please take a look at [this](http://dreamerslab.com/demos/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin)
+
+
+
+## Documentation
+  - There is a syntax highlight version, please see [this post](http://dreamerslab.com/blog/en/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin/)
+  - For chinese version please go [here](http://dreamerslab.com/blog/tw/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin/)
+
+
+
 ## Requires
   - jQuery 1.2.6+
+
+
 
 ## Browser Compatibility
   - [Firefox](http://mzl.la/RNaI) 2.0+
@@ -15,6 +32,8 @@ If you have a image gallery with different width and height for each image, your
   - [Safari](http://bit.ly/gMhzVR) 3+
   - [Opera](http://bit.ly/fWJzaC) 10.6+
   - [Chrome](http://bit.ly/ePHvYZ) 8+
+
+
 
 ## Installation
   - First, make sure you are using valid [DOCTYPE](http://bit.ly/hQK1Rk)
@@ -45,6 +64,8 @@ If you have a image gallery with different width and height for each image, your
     .clearfix{
       display: block;
     }
+
+
 
 ## Options
 
@@ -78,7 +99,7 @@ If you have a image gallery with different width and height for each image, your
 > example code
 
 <!-- -->
-    
+
     // this is the markup for $( '#gallery' ).atteeeeention();
     <div id="gallery">
       <a href="/img/a.jpg">
@@ -94,16 +115,9 @@ If you have a image gallery with different width and height for each image, your
     </div>
 
   - 'div' can be replaced with 'ul', 'ol' or any other block element.
-  - 'class' can be used instead of 'id' 
+  - 'class' can be used instead of 'id'
   - 'a' can be replaced with 'div', 'span', or any other tag
 
-## Demo
- - Please see demo.html
- - Online version please take a look at [this](http://dreamerslab.com/demos/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin)
-
-## Documentation
-  - There is a syntax highlight version, please see [this post](http://dreamerslab.com/blog/en/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin/)
-  - For chinese version please go [here](http://dreamerslab.com/blog/tw/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin/)
 
 
 ## License
