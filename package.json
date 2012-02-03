@@ -1,17 +1,17 @@
 {
-  "name": "atteeeeention",
-  "version": "1.0.3",
-  "title": "jQuery Atteeeeention Plugin",
-  "author": "dreamerslab <ben@dreamerslab.com>",
+  "name"    : "atteeeeention",
+  "version" : "1.0.3",
+  "title"   : "jQuery Atteeeeention Plugin",
+  "author"  : "dreamerslab <ben@dreamerslab.com>",
   "licenses": [{
     "type": "MIT",
-    "url": "LICENSE.txt"
+    "url" : "LICENSE.txt"
   }],
   "dependencies": {
     "jquery": ">=1.2.6"
   },
   "description": "If you have a image gallery with different width and height for each image, your page may look messy. Use this plugin to align your gallery with a 'Google Image Search' style result.",
-  "keywords": [ 
+  "keywords": [
     "google image search", "image align", "alignment", "image alignment", "layout", "layouts"
   ],
   "homepage": "http://dreamerslab.com/blog/google-image-search-style-image-alignment-with-jquery-atteeeeention-plugin/"
